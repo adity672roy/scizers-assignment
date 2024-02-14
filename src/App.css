@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #899da0;
+}
+.App {
+  padding: 10px;
+}
+.heading {
+  font-family: 2rem;
+  color: teal;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
+}
+.search-input {
+  text-align: end;
+}
+.search {
+  width: 25%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  outline: none;
+}
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #000000;
+  border-bottom-color: #ffe100;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.container {
+  padding: 5px;
+  text-align: center;
+}
+
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.card {
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+  width: 100%;
+  height: 250px;
+}
+
+/* --------------------Pagination-------------------- */
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination li {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.pagination li.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination li.prev,
+.pagination li.next {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* ------------------Media Queries------------------- */
+@media screen and (max-width: 1200px) {
+  .user-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 950px) {
+  .user-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .search {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .user-list {
+    grid-template-columns: 1fr;
+  }
+  .search-input {
+    text-align: center;
+  }
+  .search {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .pagination ul {
+    gap: 5px;
+  }
+
+  .pagination li {
+    padding: 2px 5px;
+  }
+}
